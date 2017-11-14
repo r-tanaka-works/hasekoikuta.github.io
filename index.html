@@ -2,22 +2,61 @@
 <head>
 <meta charset="utf-8"> 
  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>三択クイズ</title>
+<title>Home</title>
 </head>
 <style>
 body{
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
+ol{
+        counter-reset: li;
+	list-style:none;
+	padding-left:20px;
+}
+a{
+        position: relative;
+        display: block;
+        padding: .4em .4em .4em 2em;
+        *padding: .4em;
+        margin: .5em 0;
+        background: #ddd;
+        color: #444;
+        font-weight:600;
+        text-decoration: none;
+        border-radius: .3em;
+        transition: all .3s ease-out;
+}
+a:hover{
+        background: #eee;
+}
+a:hover:before{
+    transform: rotate(360deg);
+}
+a:before{
+        content: counter(li);
+        counter-increment: li;
+        position: absolute;
+        left: -1.3em;
+        top: 50%;
+        margin-top: -1.3em;
+        background: #87ceeb;
+        height: 2em;
+        width: 2em;
+        line-height: 2em;
+        border: .3em solid #fff;
+        text-align: center;
+        font-weight: bold;
+        border-radius: 2em;
+        transition: all .3s ease-out;
+}
 </style>
 <body>
-  <ul>
-    <li><a href="kobun/quiz.html">古文単語３３０テスト</a></li>	<br>
-    <li><a href="kobun/list.html">古文単語ランダム</a></li><br>
+  <ol>
+    <h2>古典</h2>
+    <li><a href="kobun/quiz.html">古文単語３３０テスト</a></li>
+    <li><a href="kobun/list.html">古文単語ランダム</a></li>
+    <h2>現代文</h2>
     <li><a href="genbun/list.html">現代文単語ランダム（自動）</a></li>
-    <li><a href="genbun/listB.html">現代文単語ランダム（手動）</a></li><br>
-    <li><a href="genbun/test.html">現代文単語クイズ</a></li><br>
-    <li><a href="cange/unit8.html">unit8</a></li>
-    <li><a href="cange/unit9.html">unit9</a></li>
-    <li><a href="cange/unit10.html">unit10</a></li>
-    <li><a href="cange/unit11.html">unit11</a></li>
-  </ul>
+    <li><a href="genbun/listB.html">現代文単語ランダム（手動）</a></li>
+    <li><a href="genbun/test.html">現代文単語クイズ</a></li>
+  </ol>
