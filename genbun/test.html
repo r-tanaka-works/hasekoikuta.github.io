@@ -10,30 +10,35 @@ body{
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
   margin:0;
   padding:10px;
+  background:#fcfcfc;
 }
 a{
-  display:block;
-  font-size:16px;
-  padding:8px 20px;
-  margin:8px 0;
-  color:black;
-  background:#d5d5d5;
-  border-radius:30px;
-  text-decoration:none;
--webkit-tap-highlight-color:rgba(0,0,0,0);
+  display: block;
+  background-color: #26a69b;/*背景色*/
+  color: #FFF;/*文字色*/
+  font-size: 1em;/*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 17px 1em;/*ボタン内の余白*/
+  border-radius: 3px;/*角の丸み*/
+  margin:10px 0;
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  -webkit-tap-highlight-color: transparent;
+  transition: 0.1s ease-out;/*変化を緩やかに*/
   font-weight:420;
 }
-a:active{
-  color:#fff;
-  background:#aaa;
-}
 
+a:active{
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
 #text_q{
-  height:25vh;
-  font-size:16px;
+  min-height:25vh;
+  font-size:20px;
   text-align:center;
-  padding:15px 10px;
-  padding-top:80px;
+  padding:15px 0;
+  padding-top:30px;
   font-weight:400;
 }
 #text_s{

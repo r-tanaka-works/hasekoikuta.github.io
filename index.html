@@ -3,55 +3,55 @@
 <meta charset="utf-8"> 
  <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Home</title>
+<link href="surface_styles.css" rel="stylesheet">
 </head>
 <style>
 body{
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
-ol{
-        counter-reset: li;
-	list-style:none;
-	padding-left:20px;
-}
-a{
-        position: relative;
-        display: block;
-        padding: .4em .4em .4em 2em;
-        *padding: .4em;
-        margin: .5em 0;
-        background: #ddd;
-        color: #444;
-        font-weight:600;
-        text-decoration: none;
-        border-radius: .3em;
-        transition: all .3s ease-out;
--webkit-tap-highlight-color:rgba(0,0,0,0);
-}
-a:active{
-        background: #eee;
-}
-a:active:before{
-    transform: rotate(360deg);
-}
-a:before{
-        content: counter(li);
-        counter-increment: li;
-        position: absolute;
-        left: -1.3em;
-        top: 50%;
-        margin-top: -1.3em;
-        background: #87ceeb;
-        height: 2em;
-        width: 2em;
-        line-height: 2em;
-        border: .3em solid #fff;
-        text-align: center;
-        font-weight: bold;
-        border-radius: 2em;
-        transition: all .3s ease-out;
-}
 </style>
 <body>
+	<input type="checkbox" id="nav--super-vertical-responsive">
+	<label for="nav--super-vertical-responsive">MENU</label>
+	<aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical" role="sidebar">
+		<div class="g--12 logo-area no-margin-vertical">
+			<h4 class="color--pink no-margin-vertical">Surface</h5>
+		</div>
+		<nav class="g--12 no-margin-vertical" role="navigation">
+			<a href="index.html">Home</a>
+			<div class="nav-collapsible">
+				<input type="checkbox" id="nav-collapsible-1">
+				<label for="nav-collapsible-1">Components</label>
+				<div class="nav-collapsible-links">
+					<a href="docs/alerts.html">Alerts</a>
+					<a href="docs/animations.html">Animations</a>
+					<a href="docs/buttons.html">Buttons</a>
+					<a href="docs/cards-tiles.html">Cards &amp; Tiles</a>
+					<a href="docs/collapsibles.html">Collapsibles</a>
+					<a href="docs/colors.html">Colors</a>
+					<a href="docs/footer.html">Footer</a>
+					<a href="docs/forms.html">Forms</a>
+					<a href="docs/grid.html">Grid</a>
+					<a href="docs/header.html">Header</a>
+					<a href="docs/lightbox.html">Lightbox</a>
+					<a href="docs/links.html">Links</a>
+					<a href="docs/media.html">Media</a>
+					<a href="docs/modals.html">Modals</a>
+					<a href="docs/navigation.html">Navigation</a>
+					<a href="docs/tables.html">Tables</a>
+					<a href="docs/tabs.html">Tabs</a>
+					<a href="docs/tooltips.html">Tooltips</a>
+					<a href="docs/typography.html">Typography</a>
+					<a href="docs/utility.html">Utility</a>
+				</div>
+			</div>
+		</nav>
+	</aside>
+	<main class="g--10 g-m--12 m--2 m-m--0 no-margin-vertical" role="main">
+		<header class="container--wrap">
+			<h1 class="m--1 g--4 g-s--12 docsHeader">Home</h1>
+		</header>
+
   <ol>
     <h2>古典</h2>
     <li><a href="kobun/quiz.html">古文単語３３０テスト</a></li>
@@ -61,3 +61,4 @@ a:before{
     <li><a href="genbun/listB.html">現代文単語ランダム（手動）</a></li>
     <li><a href="genbun/test.html">現代文単語クイズ</a></li>
   </ol>
+</main>
