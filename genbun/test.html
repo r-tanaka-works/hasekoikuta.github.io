@@ -21,13 +21,16 @@ a{
   text-decoration:none;
 -webkit-tap-highlight-color:rgba(0,0,0,0);
 }
+a:active{
+  color:#fff;
+  backgroud:#2f4f4f;
 }
 
 #text_q{
+  height:30vh;
   font-size:16px;
   text-align:center;
   padding:15px 10px;
-  background:#dadada;
   font-weight:500;
 }
 #text_s{
@@ -38,12 +41,8 @@ div{
 
 </style>
 <body>
-<h2>問題</h2>
 <div id="text_q"></div>
-<h2>選択</h2>
 <div id="text_s"></div>
-<h2>解答</h2>
-<div id="text_a"></div>
 <script type="text/javascript">
 //問題と解答
 al= new Array();
