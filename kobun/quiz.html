@@ -6,6 +6,10 @@
 <title>三択クイズ</title>
 </head>
 <style>
+html,body
+    overflow: hidden;
+    height: 100%;
+}
 body {
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
@@ -122,6 +126,12 @@ h2{
   padding:0;
   margin:5px 0;
 }
+.a-anser{
+  padding:10px 0px 0px 0px;
+}
+.anser{
+  padding-left:30px;
+}
 </style>
 <body>
 <div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b><span id="em" class="coin"></span></div>
@@ -206,11 +216,17 @@ function anser(num) {
 	if (num == qa[rnd][q_sel + 1]) {
 		//正解
 	document.getElementById('anser').style.backgroundColor = '#0431B4';
+	//次の問題を表示
+	count++;
+	window.setTimeout("quiz();", "1200");
+		
+
          var a = Math.floor( Math.random() * (8 + 1 - 4) ) + 8+u ;
 var id = setInterval(countup, 22);
   var countup = function(){
 u++
 document.getElementById("em").innerHTML = u;
+
  }
   var id = setInterval(function(){
     countup();
@@ -225,10 +241,6 @@ document.getElementById("em").innerHTML = u;
 	document.getElementById("text_a").innerHTML = w;
 
 	}
-	//次の問題を表示
-	count++;
-	window.setTimeout("quiz();", "1200");
-		
 }
 </script>
 </body>
