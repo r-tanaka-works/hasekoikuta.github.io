@@ -49,7 +49,7 @@ a:active{
 div{
   font-weight:700;
 }
-#em,.black{
+.black{
 display:block;
 float:left;
 height:21px;
@@ -70,11 +70,9 @@ text-align:right;
 .header{
   overflow:hidden;
 }
-#em{
-    width:30vw;
-}
+
 .black{
-  width:38vw;
+  width:78vw;
   float:left;
 }
 .blue{
@@ -116,7 +114,7 @@ border-radius:14%;
   background:#00a5e7;
 }
 #text_a{
-height:25vh;
+height:22vh;
 overflow-y:scroll;
 -webkit-overflow-scrolling: touch;
 padding: 10px 12px;
@@ -134,7 +132,7 @@ h2{
 }
 </style>
 <body>
-<div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b><span id="em" class="coin"></span></div>
+<div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div>
 <hr>
 <div id="text_q"></div>
 <h2>選択</h2>
@@ -219,21 +217,6 @@ function anser(num) {
 	//次の問題を表示
 	count++;
 	window.setTimeout("quiz();", "1200");
-		
-
-         var a = Math.floor( Math.random() * (8 + 1 - 4) ) + 8+u ;
-var id = setInterval(countup, 22);
-  var countup = function(){
-u++
-document.getElementById("em").innerHTML = u;
-
- }
-  var id = setInterval(function(){
-    countup();
-    if(u > a){　
-      clearInterval(id);　//idをclearIntervalで指定している
-    }}, 22);
-
 	} else {
 		ansers[count] = "×";
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
