@@ -29,7 +29,21 @@ a{
   transition: 0.1s ease-out;/*変化を緩やかに*/
   font-weight:420;
 }
-
+form{
+  overflow:hidden;
+}
+input{
+  width:40vw;
+  height:27px;
+  float:left;
+}
+#count{
+  position:absolute;
+  right:54px;
+  top:10px;
+  height:30px;
+  font-size:25px;
+}
 a:active{
     box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
 }
@@ -49,6 +63,12 @@ div{
 
 </style>
 <body>
+<header>
+  <form name="fm">
+    <input type="number" pattern="/d*" name="A" value="90">
+  </form>
+  <span id="count"></span><span style="position:absolute; right:10px; top:20px; font-size:17px;">問目</span>
+</header>
 <div id="text_q"></div>
 <div id="text_s"></div>
 <script type="text/javascript">
@@ -63,10 +83,11 @@ setReady();
 
 //初期設定
 function setReady() {
-	count = 0; //問題番号
+	count = 1; //問題番号
 	i = 0;
 	g = 1;
 	u = 0;
+	r=900;
 	ansers = new Array(); //解答記録
 	//最初の問題
 	quiz();
@@ -74,12 +95,14 @@ function setReady() {
 
 //問題表示
 function quiz() {
+document.getElementById("count").innerHTML = count;
 qa = new Array();
 randA = 2 * Math.floor(Math.random() * 348)+1;
 ansA = randA - 1;
 randB = 2 * Math.floor(Math.random() * 348);
 randC = 2 * Math.floor(Math.random() * 348);
 randD = 2 * Math.floor(Math.random() * 348);
+r = eval(document.fm.A.value)*10;
 
 qa[0] = [al[0][randA],al[0][ansA],al[0][randB],al[0][randC],al[0][randD],1];
 qa[1] = [al[0][randA],al[0][randB],al[0][ansA],al[0][randC],al[0][randD],2];
@@ -110,18 +133,17 @@ qa[3] = [al[0][randA],al[0][randC],al[0][randB],al[0][randD],al[0][ansA],4];
 }
 //解答表示
 function anser(num) {
-	var s,t;
+	var t;
         t = al[0][randA];
-	s = (count + 1) + "問目：";
 	//答え合わせ
 	if (num == qa[rnd][q_sel + 1]) {
-		//正解
-		ansers[count] = "○";
+	//正解
 	document.getElementById('anser').style.backgroundColor = '#4682b4';
 	document.getElementById('anser').style.color = '#fff';
-	window.setTimeout("quiz();", "900");
+	count++;
+	window.setTimeout("quiz();", r);
 	} else {
-		ansers[count] = "×";
+	//不正解
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
 	document.getElementById('anser').style.color = '#fff';
 	}
