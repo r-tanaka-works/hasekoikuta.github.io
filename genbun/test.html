@@ -153,10 +153,26 @@ function anser(num) {
 
 
 </script>
-<script src="../jquery-3.2.1.min.js"></script>
 <script>
-$(window).on('touchmove.noScroll', function(e) {
-    e.preventDefault();
+var input = document.querySelector('input');
+input.scrollTop = 1;
+
+window.addEventListener('touchmove', function(event) {
+  if (event.target === input && input.scrollTop !== 0 && input.scrollTop + input.clientHeight !== input.scrollHeight) {
+    event.stopPropagation();
+  }
+  else {
+    event.preventDefault();
+  }
+});
+
+input.addEventListener('scroll', function(event) {
+  if (input.scrollTop === 0) {
+    input.scrollTop = 1;
+  }
+  else if (input.scrollTop + input.clientHeight === input.scrollHeight) {
+    input.scrollTop = input.scrollTop - 1;
+  }
 });
 </script>
 </body>
