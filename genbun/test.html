@@ -33,8 +33,10 @@ form{
   overflow:hidden;
 }
 input{
-  width:40vw;
   height:27px;
+}
+.tel{
+  width:40vw;
   float:left;
 }
 #count{
@@ -65,7 +67,9 @@ div{
 <body>
 <header>
   <form name="fm">
-    <input type="tel" name="A" value="90">
+    <input type="tel" class="tel" name="A" value="90">
+    <INPUT type=button value="＋" onClick="plus(this.form.A)">
+    <INPUT type=button value="－" onClick="minus(this.form.A)">
   </form>
   <span id="count"></span><span style="position:absolute; right:10px; top:20px; font-size:17px;">問目</span>
 </header>
@@ -102,7 +106,6 @@ ansA = randA - 1;
 randB = 2 * Math.floor(Math.random() * 348);
 randC = 2 * Math.floor(Math.random() * 348);
 randD = 2 * Math.floor(Math.random() * 348);
-r = eval(document.fm.A.value)*10;
 
 qa[0] = [al[0][randA],al[0][ansA],al[0][randB],al[0][randC],al[0][randD],1];
 qa[1] = [al[0][randA],al[0][randB],al[0][ansA],al[0][randC],al[0][randD],2];
@@ -133,6 +136,8 @@ qa[3] = [al[0][randA],al[0][randC],al[0][randB],al[0][randD],al[0][ansA],4];
 }
 //解答表示
 function anser(num) {
+r = eval(document.fm.A.value)*10;
+
 	var t;
         t = al[0][randA];
 	//答え合わせ
@@ -149,7 +154,14 @@ function anser(num) {
 	}
 	//次の問題を表示
 }
-
+</script>
+<script>
+function plus(chk){
+chk.value = eval(chk.value) + 10;
+}
+function minus(chk){
+chk.value = eval(chk.value) - 10;
+}
 
 
 </script>
