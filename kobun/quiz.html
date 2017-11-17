@@ -53,18 +53,13 @@ div{
 display:block;
 float:left;
 height:21px;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0.47, #181b20), color-stop(0.39, #293142));
-background: -webkit-linear-gradient(top, #293142 39%, #181b20 47%);
-background: -moz-linear-gradient(top, #293142 39%, #181b20 47%);
-background: -o-linear-gradient(top, #293142 39%, #181b20 47%);
-background: -ms-linear-gradient(top, #293142 39%, #181b20 47%);
-background: linear-gradient(to bottom, #293142 39%, #181b20 47%);
+background:#111;
 color:white;
 font-weight:700;
 padding:1px 2vw;
 margin:0 2vw 3vw 7vw;
 font-size:14px;
-border-radius:7%;
+border-radius:5px;;
 text-align:right;
 }
 .header{
@@ -72,30 +67,21 @@ text-align:right;
 }
 
 .black{
-  width:78vw;
+  width:50vw;
   float:left;
 }
 .blue{
   display:block;
   float:left;
   height:21px;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0.51, #4680e2), color-stop(0.39, #7ea0e7));
-background: -webkit-linear-gradient(top, #7ea0e7 39%, #4680e2 51%);
-background: -moz-linear-gradient(top, #7ea0e7 39%, #4680e2 51%);
-background: -o-linear-gradient(top, #7ea0e7 39%, #4680e2 51%);
-background: -ms-linear-gradient(top, #7ea0e7 39%, #4680e2 51%);
-background: linear-gradient(to bottom, #7ea0e7 39%, #4680e2 51%);
-
-
+  background:#111;
 }
-#level{
-  width:38vw;
-  font-size:12px;
-text-shadow:0px 2px 1px #000;
+input{
+  width:30vw;
+  float:left;
+  height:17px;
 }
-#em:before{
-  content:"A";
-}#level:before{
+#level:before{
   content:attr(data-content);
 text-shadow:0 0 0;
 }
@@ -110,8 +96,8 @@ span::before{
   font-size:18px;
   width:25px;
   height:28px;
-border-radius:14%;
-  background:#00a5e7;
+border-radius:12px;
+  background:#009688;
 }
 #text_a{
 height:22vh;
@@ -133,8 +119,7 @@ h2{
 }
 </style>
 <body>
-<div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div>
-<hr>
+<div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b><form name="fm"><input type="number" pattern="/d*" name="A" value="90"></form></div>
 <div id="text_q"></div>
 <h2>選択</h2>
 <div id="text_s"></div>
@@ -161,6 +146,7 @@ function setReady() {
 	g = 1;
 	u = 0;
 	w = "";
+	r = 900;
 	ansers = new Array(); //解答記録
 	//最初の問題
 	quiz();
@@ -168,6 +154,7 @@ function setReady() {
 
 //問題表示
 function quiz() {
+r = eval(document.fm.A.value)*10;
 h++;
 	if (h == f){
 		g++;
@@ -217,7 +204,7 @@ function anser(num) {
 	document.getElementById('anser').style.backgroundColor = '#0431B4';
 	//次の問題を表示
 	count++;
-	window.setTimeout("quiz();", "1200");
+	window.setTimeout("quiz();", r);
 	} else {
 		ansers[count] = "×";
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
