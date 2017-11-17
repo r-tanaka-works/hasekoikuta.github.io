@@ -154,11 +154,11 @@ function anser(num) {
 
 </script>
 <script>
-var input = document.querySelector('input');
-input.scrollTop = 1;
+var form = document.querySelector('form');
+form.scrollTop = 1;
 
 window.addEventListener('touchmove', function(event) {
-  if (event.target === input && input.scrollTop !== 0 && input.scrollTop + input.clientHeight !== input.scrollHeight) {
+  if (event.target === form && form.scrollTop !== 0 && form.scrollTop + form.clientHeight !== form.scrollHeight) {
     event.stopPropagation();
   }
   else {
@@ -166,12 +166,12 @@ window.addEventListener('touchmove', function(event) {
   }
 });
 
-input.addEventListener('scroll', function(event) {
-  if (input.scrollTop === 0) {
-    input.scrollTop = 1;
+form.addEventListener('scroll', function(event) {
+  if (form.scrollTop === 0) {
+    form.scrollTop = 1;
   }
-  else if (input.scrollTop + input.clientHeight === input.scrollHeight) {
-    input.scrollTop = input.scrollTop - 1;
+  else if (form.scrollTop + form.clientHeight === form.scrollHeight) {
+    form.scrollTop = form.scrollTop - 1;
   }
 });
 </script>
