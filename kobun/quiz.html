@@ -12,7 +12,7 @@ html, body{
 body {
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
-a{
+#text_s a{
   display: block;
   background-color: #26a69b;/*背景色*/
   color: #FFF;/*文字色*/
@@ -113,19 +113,34 @@ h2{
   font-size:17px;
 }
 .a-anser{
-  padding:40px 0px 0px 0px;
-  width:100%;
+  padding:5px 12px;
+  width:90%;
+  border-bottom:1px solid #ccc;
+  font-size:18px;
+}
+a{
+  color:#000;
+  text-decoration:none;
 }
 .anser{
   padding-left:10px;
+  font-size:12px;
+}
+.bigger{
+  position:absolute;
+  top:0;
+  margin-top:7vh;
+  height:93vh !important; 
+  width:100%;
+  background:#FFF;
 }
 </style>
 <body>
-<div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div>
+<a href="javascript:small()"><div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div></a>
 <div id="text_q"></div>
 <h2>選択</h2>
 <div id="text_s"></div>
-<h2>誤答</h2>
+<a href="javascript:big()"><h2>誤答</h2></a>
 <div id="text_a"></div>
 <form name="fm"><input type="range" min="5" max="200" name="A" value="40"></form>
 <script type="text/javascript">
@@ -211,11 +226,18 @@ r = eval(document.fm.A.value)*10;
 	} else {
 		ansers[count] = "×";
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
-	w +=  "<div class='a-anser'>" + al[0][randA] + "<span class='anser'>--" + t + "</span></div>";
+	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
 	document.getElementById("text_a").innerHTML = w;
 
 	}
 }
+function big(){
+document.getElementById("text_a").className="bigger";
+}
+function small(){
+document.getElementById("text_a").className="";
+}
+
 </script>
 </body>
 </html>
