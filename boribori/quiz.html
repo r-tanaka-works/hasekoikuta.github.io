@@ -1,4 +1,4 @@
-
+﻿
 <!DOCTYPE HTML>
 <head>
 <meta charset="utf-8">
@@ -228,7 +228,7 @@ r = eval(document.fm.A.value)*10;
 	} else {
 		ansers[count] = "×";
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
-	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
+	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"<span style='font-size:10px'>("+ randA + ")</span></div><div class='anser'>"+t+"</div></a></div>" + w;
 	document.getElementById("text_a").innerHTML = w;
 
 	}
