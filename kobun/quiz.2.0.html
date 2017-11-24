@@ -1,0 +1,308 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三択クイズ</title>
+</head>
+<style>
+html, body{
+  overflow-x:hidden;
+}
+body {
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+}
+#text_s a{
+  display: block;
+  background-color: #26a69b;/*背景色*/
+  color: #FFF;/*文字色*/
+  font-size: 1em;/*文字サイズ*/
+  line-height: 1;
+  text-decoration: none;
+  letter-spacing: 0.05em;/*字間*/
+  padding: 17px 1em;/*ボタン内の余白*/
+  border-radius: 3px;/*角の丸み*/
+  margin:10px 0;
+    cursor: pointer;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);/*影*/
+  transition: 0.1s ease-out;/*変化を緩やかに*/
+  font-weight:420;
+}
+
+a:active{
+    box-shadow: 0 3px 3px 0 rgba(0,0,0,0.14), 0 1px 7px 0 rgba(0,0,0,0.12), 0 3px 1px -1px rgba(0,0,0,0.2);/*浮き上がるように*/
+}
+#text_q{
+  width:100%;
+  height:40px;
+  font-size:20px;
+  text-align:center;
+  padding-top:15px;
+  background:#dadada;
+  font-weight:700;
+}
+#text_s{
+  text-align:center;
+}
+div{
+  font-weight:700;
+}
+.black{
+display:block;
+float:left;
+height:21px;
+background:#111;
+color:white;
+font-weight:700;
+padding:1px 2vw;
+margin:0 2vw 3vw 7vw;
+font-size:14px;
+border-radius:5px;;
+text-align:right;
+}
+.header{
+  overflow:hidden;
+}
+
+.black{
+  width:20vw;
+  height:21px;
+  float:left;
+}
+.blue{
+  display:block;
+  float:left;
+  height:21px;
+  background:#111;
+}
+input{
+  -webkit-tap-highlight-color: transparent;
+  width:50%;
+  margin:0 25%;
+  height:50px;
+}
+#level:before{
+  content:attr(data-content);
+text-shadow:0 0 0;
+}
+span::before{
+  display:block;
+  float:left;
+  position:absolute;
+  margin-left:-9vw;
+  margin-top:-3px;
+  padding-right:15px;
+  padding-left:0;
+  font-size:18px;
+  width:25px;
+  height:28px;
+border-radius:12px;
+  background:#009688;
+}
+#text_a{
+height:35vh;
+overflow-y:scroll;
+-webkit-overflow-scrolling: touch;
+padding: 10px 12px;
+border: 1px solid #ddd;
+}
+h2{
+  padding:0;
+  margin:10px 0;
+  font-size:17px;
+}
+.a-anser{
+  padding:5px 12px;
+  width:90%;
+  border-bottom:1px solid #ccc;
+  font-size:18px;
+}
+a{
+  -webkit-tap-highlight-color: transparent;
+
+  color:#000;
+  text-decoration:none;
+}
+.anser{
+  padding-left:10px;
+  font-size:12px;
+}
+.bigger{
+  position:absolute;
+  top:0;
+  margin-top:7vh;
+  height:80vh !important; 
+  background:#FFF;
+  width:96vw;
+  padding:0 !important;
+  left:2vw;
+}
+</style>
+
+<body>
+<a href="javascript:small()"><div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div></a>
+<div id="text_q"></div>
+<h2>選択</h2>
+<div id="text_s"></div>
+<a href="javascript:big()"><h2>誤答</h2></a>
+<div id="text_a"></div>
+<form name="fm"><input type="range" min="5" max="200" name="A" value="40"></form>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript">
+//問題と解答
+//初期設定
+q_sel = 3; //選択肢の数
+
+setReady();
+
+//初期設定
+function setReady() {
+	count = 0; //問題番号
+	i = 0;
+	h = 0;
+	f = 20;
+	g = 1;
+	u = 0;
+	w = "";
+	r = 900;
+	ansers = new Array(); //解答記録
+	mis = new Array();
+	mis[1] = [];
+	mis[2] = [];
+	mis[3] = [];
+	mis[4] = [];
+	mis[5] = [];
+	//最初の問題
+	quiz();
+}
+
+//問題表示
+function quiz() {
+h++;
+	if (h == f){
+		
+		g++;
+		h = 0;
+		f = f+ 14*g;
+	}
+qa = new Array();
+randA = Math.floor(Math.random() * al[0].length);
+randB = Math.floor(Math.random() * al[0].length);
+randC = Math.floor(Math.random() * al[0].length);
+randD = Math.floor(Math.random() * al[0].length);
+
+        if(mis[1].length > 0){
+        	E = Math.floor(Math.random() * mis[1].length);
+        	randE = mis[1][E];
+        	mis[2].push(E);
+        	mis[1].splice(E,1);
+       		x = Math.random();
+       		if(x < 0.8){
+       			randA = Number(randE);
+       		}
+       	}
+        if(mis[2].length > 0){
+        	F = Math.floor(Math.random() * mis[2].length);
+        	randF = mis[2][F];
+        	mis[3].push(F);
+        	mis[2].splice(F,1);
+       		x = Math.random();
+       		if(x < 0.4){
+       			randA =  Number(randF);
+       		}
+       	}
+        if(mis[3].length > 0){
+        	G = Math.floor(Math.random() * mis[3].length);
+        	randG = mis[3][G];
+        	mis[4].push(G);
+        	mis[3].splice(G,1);
+       		x = Math.random();
+       		if(x < 0.2){
+       			randA =  Number(randG);
+       		}
+       	}
+        if(mis[4].length > 0){
+        	H = Math.floor(Math.random() * mis[4].length);
+        	randH = mis[4][H];
+        	mis[5].push(H);
+        	mis[4].splice(H,1);
+       		x = Math.random();
+       		if(x < 0.1){
+       			randA =  Number(randH);
+       		}
+       	}
+        if(mis[5].length > 0){
+        	I = Math.floor(Math.random() * mis[5].length);
+        	randI = mis[5][I];
+        	mis[5].push(I,1);
+       		x = Math.random();
+       		if(x < 0.025){
+       			randA =  Number(randI);
+       		}
+       	}
+
+
+qa[0] = [al[0][randA],al[1][randA],al[1][randB],al[1][randC],1];
+qa[1] = [al[0][randA],al[1][randB],al[1][randA],al[1][randC],2];
+qa[2] = [al[0][randA],al[1][randC],al[1][randB],al[1][randA],3];
+
+	var s, n;
+
+	//問題
+	rnd = Math.floor(Math.random() * qa.length); //乱数
+	document.getElementById("text_q").innerHTML = qa[rnd][0];
+	document.getElementById("level").innerHTML = h + "/" + f;
+        document.getElementById('level').setAttribute('data-content',g);
+	//選択肢
+	s = "";
+	for (n=1;n<=q_sel;n++) {
+		if (qa[rnd][n] != "") {
+			if (qa[rnd][n] == al[1][randA]){
+				s += "<a href='javascript:anser(" + n + ")' id='anser'>" + qa[rnd][n] + "</a>";
+			} else if (qa[rnd][n] == al[1][randB]){
+				s += "<a href='javascript:anser(" + n + ")' id='randB'>" + qa[rnd][n] + "</a>";
+			} else {
+				s += "<a href='javascript:anser(" + n + ")' id='randC'>" + qa[rnd][n] + "</a>";
+			}
+		}
+	}
+	document.getElementById("text_s").innerHTML = s;
+}
+//解答表示
+function anser(num) {
+r = eval(document.fm.A.value)*10;
+	var s,t;
+        t = al[1][randA];
+	//答え合わせ
+	if (num == qa[rnd][q_sel + 1]) {
+
+		//正解
+	document.getElementById('anser').style.backgroundColor = '#0431B4';
+	//次の問題を表示
+	count++;
+	window.setTimeout("quiz();", r);
+	} else {
+		ansers[count] = "×";
+	document.getElementById('anser').style.backgroundColor = '#ff7f50';
+	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
+	mis[1].push(Number(randA));
+	document.getElementById("text_a").innerHTML = w;
+}
+function big(){
+document.getElementById("text_a").className="bigger";
+}
+function small(){
+document.getElementById("text_a").className="";
+}
+
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109934370-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109934370-1');
+</script>
+</body>
+</html>
