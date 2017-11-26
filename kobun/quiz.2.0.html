@@ -136,10 +136,11 @@ a{
   padding:0 !important;
   left:2vw;
 }
+
 </style>
 
 <body>
-<a href="javascript:small()"><div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b><div id="misa">1</div><div id="misb">2</div><div id="misc">3</div><div id="misd">4</div><div id="mise">5</div></div></a>
+<a href="javascript:small()"><div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div></a>
 <div id="text_q"></div>
 <h2>選択</h2>
 <div id="text_s"></div>
@@ -173,6 +174,7 @@ function setReady() {
 	mis_five = [];
 	//最初の問題
 	quiz();
+
 }
 
 //問題表示
@@ -184,23 +186,7 @@ h++;
 		h = 0;
 		f = f+ 14*g;
 	}
-	document.getElementById("misa").innerHTML = "";
 
-for(n=0;n<mis_one.length;n++){
-	document.getElementById("misa").innerHTML += al[0][mis_one[n]]+",";
-	}
-for(n=0;n<mis_two.length;n++){
-	document.getElementById("misb").innerHTML += al[0][mis_two[n]]+",";
-	}
-for(n=0;n<mis_three.length;n++){
-	document.getElementById("misc").innerHTML += al[0][mis_three[n]]+",";
-	}
-for(n=0;n<mis_four.length;n++){
-	document.getElementById("misd").innerHTML += al[0][mis_four[n]]+",";
-	}
-for(n=0;n<mis_five.length;n++){
-	document.getElementById("mise").innerHTML += al[0][mis_five[n]]+",";
-	}
 
 	
 qa = new Array();
@@ -209,69 +195,47 @@ randB = Math.floor(Math.random() * al[0].length);
 randC = Math.floor(Math.random() * al[0].length);
 randD = Math.floor(Math.random() * al[0].length);
 
-        if(mis_five.length > 0){
        		x = Math.random();
-       		if(x < 0.025){
-        		I = Math.floor(Math.random() * mis_five.length);
-		if(I =>1){
-        		randI = mis_five[I];
-        		mis_five.push(I,1);
-       			randA =  Number(randI);
-       			}
-       		}
-       	}
-        if(mis_four.length > 0){
-       		x = Math.random();
-       		if(x < 0.1){
-        		H = Math.floor(Math.random() * mis_four.length);
-		if(H =>1){
+       		y = Math.random();
+       		z = Math.random();
+       		t = Math.random();
+       		s = Math.random();
 
-        	randH = mis_four[H];
-        	mis_five.push(H);
-        	mis_four.splice(H,1);
-       			randA =  Number(randH);
-       			}
-       		}
-       	}
-        if(mis_three.length > 0){
-       		x = Math.random();
-       		if(x < 0.2){
-        	G = Math.floor(Math.random() * mis_three.length);
-        			if(G =>1){
-
-        	randG = mis_three[G];
-        	mis_four.push(G);
-        	mis_three.splice(G,1);
-       			randA =  Number(randG);
-       		}}
-       	}
-
-        if(mis_two.length > 0){
-       		x = Math.random();
-       		if(x < 0.4){
-        	F = Math.floor(Math.random() * mis_two.length);
-        			if(F =>1){
-
-        	randF = mis_two[F];
-        	mis_three.push(F);
-        	mis_two.splice(F,1);
-       			randA =  Number(randF);
-       		}}
-       	}
-        if(mis_one.length > 0){
-       		x = Math.random();
-       		if(x < 0.6){
-        	E = Math.floor(Math.random() * mis_one.length);
-        			if(E =>1){
-
-        	randE = mis_one[E];
-        	mis_two.push(E);
-        	mis_one.splice(E,1);
+       		if(x < 0.6){if(mis_one.length > 0){
+       			h--;
+        		E = Math.floor(Math.random() * mis_one.length);
+        		randE = mis_one[E];
+        		mis_two.push(Number(randE));
+        		mis_one.splice(E,1);
        			randA = Number(randE);
-       			}
+       		}} else if(y < 0.4){if(mis_two.length > 0){
+       		 	F = Math.floor(Math.random() * mis_two.length);
+        		randF = mis_two[F];
+        		mis_three.push(Number(randF));
+        		mis_two.splice(F,1);
+       			randA =  Number(randF);
+       			h--;
+       		}} else if(z < 0.3){if(mis_three.length > 0){
+       			h--;
+        		G = Math.floor(Math.random() * mis_three.length);
+        		randG = mis_three[G];
+        		mis_four.push(Number(randG));
+        		mis_three.splice(G,1);
+       			randA =  Number(randG);
+       		}}else if(t < 0.28){if(mis_four.length > 0){
+       			h--;
+        		H = Math.floor(Math.random() * mis_four.length);
+        		randH = mis_four[H];
+        		mis_five.push(Number(randH));
+        		mis_four.splice(H,1);
+       			randA =  Number(randH);
+       		}}else if(s < 0.5){if(mis_five.length > 0){       			h--;
+        		I = Math.floor(Math.random() * mis_five.length);
+        		randI = mis_five[I];
+        		mis_five.splice(I,1);
+       			randA =  Number(randI);
+		}}
 
-       		}
-       	}
 
 qa[0] = [al[0][randA],al[1][randA],al[1][randB],al[1][randC],1];
 qa[1] = [al[0][randA],al[1][randB],al[1][randA],al[1][randC],2];
@@ -313,7 +277,6 @@ r = eval(document.fm.A.value)*10;
 	count++;
 	window.setTimeout("quiz();", r);
 	} else {
-		ansers[count] = "×";
 	document.getElementById('anser').style.backgroundColor = '#ff7f50';
 	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"' target='_blank'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
 	mis_one.unshift(Number(randA));
