@@ -180,6 +180,9 @@ function setReady() {
 //問題表示
 function quiz() {
 h++;
+	document.getElementById("level").innerHTML = h + "/" + f;
+        document.getElementById('level').setAttribute('data-content',g);
+
 	if (h == f){
 		
 		g++;
@@ -246,8 +249,6 @@ qa[2] = [al[0][randA],al[1][randC],al[1][randB],al[1][randA],3];
 	//問題
 	rnd = Math.floor(Math.random() * qa.length); //乱数
 	document.getElementById("text_q").innerHTML = qa[rnd][0];
-	document.getElementById("level").innerHTML = h + "/" + f;
-        document.getElementById('level').setAttribute('data-content',g);
 	//選択肢
 	s = "";
 	for (n=1;n<=q_sel;n++) {
