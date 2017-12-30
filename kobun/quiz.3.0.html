@@ -13,7 +13,7 @@
 				<b class="blue"></b>
 				<span id="level">0/20</span>
 			</b>
-				<span id="number">uu</span>
+				総解答数<span id="number"></span>問
 
 		</div>
 	</a>
@@ -31,12 +31,7 @@ var num = getCookie('COUNT');
 if(!num){
 	num = 0;
 }
-	num++;
-	var expire = new Date();
-	expire.setTime(expire.getTime() + (30 * 24 * 60 * 60 * 1000));
-	document.cookie = 'COUNT=' + num + ';expire=' + expire.toUTCString();
-		document.getElementById("number").innerHTML = num;
-
+num = num - 2;
 </script>
 <script type="text/javascript" src="js/list.js"></script>
 <script type="text/javascript" src="js/quiz.3.0.js"></script>
