@@ -27,7 +27,7 @@ function setReady() {
 function quiz() {
 	num++;
 	var expire = new Date();
-	expire.setTime(expire.getTime() + (100 * 24 * 60 * 60 * 1000));
+	expire.setTime(expire.getTime() + (100 * 24 * 60 * 60 * 10000000));
 	document.cookie = 'COUNT=' + num + ';expire=' + expire.toUTCString();
 		document.getElementById("number").innerHTML = num;
 

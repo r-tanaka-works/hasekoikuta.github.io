@@ -122,7 +122,7 @@ function setReady() {
 
 function Countup(){
 	count++;
-		a = Math.floor(Math.random() * 335);
+		a = Math.floor(Math.random() * al[0].length);
 		b = al[0][a];
 		c = al[1][a];
 	document.getElementById("text_k").innerHTML = b;
@@ -135,7 +135,7 @@ function show(){
 }
 function maru(){
 	document.getElementById("text_g").innerHTML = c;
-	window.setTimeout("Countup();", 300);
+	window.setTimeout("Countup();", 0);
 }
 function batu(){
 	w = "<div class='ans'><a href='https://kobun.weblio.jp/content/" + al[0][a] +"'><div class='w'>"+al[0][a]+ "</div><div class='a'>" + c +"</div></a></div>"+ w;
