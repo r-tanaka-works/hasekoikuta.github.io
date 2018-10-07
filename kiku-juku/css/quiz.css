@@ -3,10 +3,11 @@ html, body{
 }
 body {
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
+  background:#997818;
 }
 #text_s a{
   display: block;
-  background-color: #26a69b;/*背景色*/
+  background-color: #ffc03b;/*背景色*/
   color: #FFF;/*文字色*/
   font-size: 1em;/*文字サイズ*/
   line-height: 1;
@@ -30,8 +31,9 @@ a:active{
   font-size:20px;
   text-align:center;
   padding-top:15px;
-  background:#dadada;
+  background:#fafafa;
   font-weight:700;
+  
 }
 #text_s{
   text-align:center;
@@ -89,7 +91,7 @@ span::before{
   width:25px;
   height:28px;
 border-radius:12px;
-  background:#009688;
+  background:#ffc03b;
 }
 #text_a{
 height:35vh;
