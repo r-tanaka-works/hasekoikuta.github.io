@@ -1,0 +1,120 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>三択クイズ</title>
+<link rel="stylesheet" href="css/quiz.css">
+
+</head>
+<body>
+<a href="javascript:small()"><div class="header"><b class="black"><b class="blue"></b><span id="level">0/20</span></b></div></a>
+<div id="text_q"></div>
+<h2>選択</h2>
+<div id="text_s"></div>
+<a href="javascript:big()"><h2>誤答</h2></a>
+<div id="text_a"></div>
+<form name="fm"><input type="range" min="5" max="200" name="A" value="40"></form>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript">
+//問題と解答
+//初期設定
+q_sel = 3; //選択肢の数
+
+setReady();
+
+//初期設定
+function setReady() {
+	count = 0; //問題番号
+	i = 0
+	h = 0;
+	f = 20;
+	g = 1;
+	u = 0;
+	w = "";
+	r = 900;
+	ansers = new Array(); //解答記録
+	//最初の問題
+	quiz();
+}
+
+//問題表示
+function quiz() {
+h++;
+	if (h == f){
+		g++;
+		h = 0;
+		f = f+ 14*g;
+	}
+qa = new Array();
+randA = Math.floor(Math.random() * 335);
+randB = Math.floor(Math.random() * 335);
+randC = Math.floor(Math.random() * 335);
+randD = Math.floor(Math.random() * 335);
+
+
+qa[0] = [al[0][randA],al[1][randA],al[1][randB],al[1][randC],1];
+qa[1] = [al[0][randA],al[1][randB],al[1][randA],al[1][randC],2];
+qa[2] = [al[0][randA],al[1][randC],al[1][randB],al[1][randA],3];
+
+	var s, n;
+
+	//問題
+	rnd = Math.floor(Math.random() * qa.length); //乱数
+	document.getElementById("text_q").innerHTML = qa[rnd][0];
+	document.getElementById("level").innerHTML = h + "/" + f;
+        document.getElementById('level').setAttribute('data-content',g);
+	//選択肢
+	s = "";
+	for (n=1;n<=q_sel;n++) {
+		if (qa[rnd][n] != "") {
+			if (qa[rnd][n] == al[1][randA]){
+				s += "<a href='javascript:anser(" + n + ")' id='anser'>" + qa[rnd][n] + "</a>";
+			} else if (qa[rnd][n] == al[1][randB]){
+				s += "<a href='javascript:anser(" + n + ")' id='randB'>" + qa[rnd][n] + "</a>";
+			} else {
+				s += "<a href='javascript:anser(" + n + ")' id='randC'>" + qa[rnd][n] + "</a>";
+			}
+		}
+	}
+	document.getElementById("text_s").innerHTML = s;
+}
+//解答表示
+function anser(num) {
+r = eval(document.fm.A.value)*10;
+	var s,t;
+        t = al[1][randA];
+	//答え合わせ
+	if (num == qa[rnd][q_sel + 1]) {
+
+		//正解
+	document.getElementById('anser').style.backgroundColor = '#0431B4';
+	//次の問題を表示
+	count++;
+	window.setTimeout("quiz();", r);
+	} else {
+		ansers[count] = "×";
+	document.getElementById('anser').style.backgroundColor = '#ff7f50';
+	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
+	document.getElementById("text_a").innerHTML = w;
+
+	}
+}
+function big(){
+document.getElementById("text_a").className="bigger";
+}
+function small(){
+document.getElementById("text_a").className="";
+}
+
+</script>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-109934370-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-109934370-1');
+</script>
+</body>
+</html>
