@@ -123,7 +123,7 @@ function anser(num) {
 	} else {
 	//不正解
 		document.getElementById('anser').style.backgroundColor = '#ff7f50';
-	w =  "<div class='a-anser'><a href='https://kobun.weblio.jp/content/" + al[0][randA] +"'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></a></div>" + w;
+	w =  "<div class='a-anser'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></div>" + w;
 	document.getElementById("text_a").innerHTML = w;
 		mis_one.unshift(Number(randA));
 		document.getElementById("text_a").innerHTML = w;
