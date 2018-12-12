@@ -25,6 +25,7 @@ function setReady() {
 
 
 function quiz() {
+	l = eval(document.fn.B.value);
 	num++;
 	var expire = new Date();
 	expire.setTime(expire.getTime() + (100 * 24 * 60 * 60 * 1000));
@@ -43,11 +44,19 @@ function quiz() {
 		f = f+ 14*g;
 	}
 	
-	randA = Math.floor(Math.random() * al[0].length);
-	randB = Math.floor(Math.random() * al[0].length);
-	randC = Math.floor(Math.random() * al[0].length);
-	randD = Math.floor(Math.random() * al[0].length);
+	randA = Math.floor(Math.random() * l);
+	randB = Math.floor(Math.random() * l);
+	randC = Math.floor(Math.random() * l);
 
+	if(randA == randB){
+		window.setTimeout("quiz();", r);
+	}
+	if(randC == randB){
+		window.setTimeout("quiz();", r);
+	}
+	if(randC == randA){
+		window.setTimeout("quiz();", r);
+	}
 	x = Math.random();
 
        		if(x < 0.4){if(mis_one.length > 0){

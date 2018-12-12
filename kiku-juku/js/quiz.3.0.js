@@ -19,12 +19,22 @@ function setReady() {
 	mis_three = [];
 	mis_four = [];
 	mis_five = [];
+for(var i = al[0].length - 1; i > 0; i--){
+    var r = Math.floor(Math.random() * (i + 1));
+    var tmp = al[0][i];
+    var tmp2 = al[1][i];
+    al[0][i] = al[0][r];
+    al[1][i] = al[1][r];
+    al[0][r] = tmp;
+    al[1][r] = tmp2;
+}
 	quiz();
 
 }
 
 
 function quiz() {
+	l = eval(document.fn.B.value);
 	num++;
 	var expire = new Date();
 	expire.setTime(expire.getTime() + (100 * 24 * 60 * 60 * 10000000));
@@ -43,11 +53,25 @@ function quiz() {
 		f = f+ 14*g;
 	}
 	
-	randA = Math.floor(Math.random() * al[0].length);
-	randB = Math.floor(Math.random() * al[0].length);
-	randC = Math.floor(Math.random() * al[0].length);
-	randD = Math.floor(Math.random() * al[0].length);
-
+	randA = Math.floor(Math.random() * l);
+	randB = Math.floor(Math.random() * l);
+	randC = Math.floor(Math.random() * l);
+	randD = Math.floor(Math.random() * l);
+	if(randA == randB){
+		h--;
+		num--;
+		window.setTimeout("quiz();", 0);
+	}
+	if(randC == randB){
+		h--;
+		num--;
+		window.setTimeout("quiz();", 0);
+	}
+	if(randA == randC){
+		h--;
+		num--;
+		window.setTimeout("quiz();", 0);
+	}
 	x = Math.random();
 
        		if(x < 0.4){if(mis_one.length > 0){

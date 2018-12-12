@@ -98,6 +98,9 @@ header{
 </head>
 <body>
 <header>
+  <form name="fn">
+    <input type="tel" class="tel" name="B" value="10">
+  </form>
 <div id="count">0問目</div>
 </header>
 <div id="text_k">古文単語</div>
@@ -118,11 +121,22 @@ function setReady() {
 	count = 0;
 	w = "";
 	Countup();
+	for(var i = al[0].length - 1; i > 0; i--){
+	    var r = Math.floor(Math.random() * (i + 1));
+	    var tmp = al[0][i];
+	    var tmp2 = al[1][i];
+	    al[0][i] = al[0][r];
+	    al[1][i] = al[1][r];
+	    al[0][r] = tmp;
+	    al[1][r] = tmp2;
+	}
+
 }
 
 function Countup(){
 	count++;
-		a = Math.floor(Math.random() * al[0].length);
+	l = eval(document.fn.B.value);
+		a = Math.floor(Math.random() * l);
 		b = al[0][a];
 		c = al[1][a];
 	document.getElementById("text_k").innerHTML = b;
