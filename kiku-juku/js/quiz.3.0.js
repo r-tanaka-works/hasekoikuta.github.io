@@ -135,6 +135,7 @@ function big(){
 }
 function check(){
 	document.getElementById("check").className="checked";
+	document.getElementById("text_a").className="hidden";	
 	Countup();
 }
 function Countup(){
