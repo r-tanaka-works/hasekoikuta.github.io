@@ -13,12 +13,15 @@ function setReady() {
 	u = 0;
 	w = "";
 	r = 900;
+	p = 0;
 	ansers = new Array();
 	mis_one = [];
 	mis_two = [];
 	mis_three = [];
 	mis_four = [];
 	mis_five = [];
+	ar = [];
+	arr = [];
 for(var i = al[0].length - 1; i > 0; i--){
     var r = Math.floor(Math.random() * (i + 1));
     var tmp = al[0][i];
@@ -74,37 +77,6 @@ function quiz() {
 	}
 	x = Math.random();
 
-       		if(x < 0.4){if(mis_one.length > 0){
-        		E = Math.floor(Math.random() * mis_one.length);
-        		randE = mis_one[E];
-        		mis_two.push(Number(randE));
-        		mis_one.splice(E,1);
-       			randA = Number(randE);
-       		}}else if(0.4 < x < 0.55){if(mis_two.length > 0){
-       			F = Math.floor(Math.random() * mis_two.length);
-        		randF = mis_two[F];
-        		mis_three.push(Number(randF));
-        		mis_two.splice(F,1);
-       			randA =  Number(randF);
-       			
-       		}}else if(0.55 < x < 0.65){if(mis_three.length > 0){
-       			G = Math.floor(Math.random() * mis_three.length);
-        		randG = mis_three[G];
-        		mis_four.push(Number(randG));
-        		mis_three.splice(G,1);
-       			randA =  Number(randG);
-       		}}else if(0.65 < x < 0.70){if(mis_four.length > 0){
-        		H = Math.floor(Math.random() * mis_four.length);
-        		randH = mis_four[H];
-        		mis_five.push(Number(randH));
-        		mis_four.splice(H,1);
-       			randA =  Number(randH);
-       		}}else if(0.70 < x < 0.72){if(mis_five.length > 0){  
-        		I = Math.floor(Math.random() * mis_five.length);
-        		randI = mis_five[I];
-        		mis_five.splice(I,1);
-       			randA =  Number(randI);
-		}}
 
 	qa = new Array();
 
@@ -146,6 +118,9 @@ function anser(num) {
 		window.setTimeout("quiz();", r);
 	} else {
 	//不正解
+	ar[p] = al[0][randA];
+	arr[p] = t;
+	p++;
 		document.getElementById('anser').style.backgroundColor = '#ff7f50';
 	w =  "<div class='a-anser'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></div>" + w;
 	document.getElementById("text_a").innerHTML = w;
@@ -157,6 +132,24 @@ function anser(num) {
 
 function big(){
 	document.getElementById("text_a").className="bigger";
+}
+function check(){
+	document.getElementById("check").className="checked";
+	Countup();
+}
+function Countup(){
+		a = Math.floor(Math.random() * p);
+		b = ar[a];
+		c = arr[a];
+	document.getElementById("text_k").innerHTML = b;
+	document.getElementById("text_g").innerHTML ="";
+}
+function show(){
+	document.getElementById("text_g").innerHTML = c;
+}
+function maru(){
+	document.getElementById("text_g").innerHTML = c;
+	window.setTimeout("Countup();", 0);
 }
 
 
