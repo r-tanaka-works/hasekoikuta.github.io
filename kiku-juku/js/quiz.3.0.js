@@ -5,6 +5,7 @@ q_sel = 3;
 setReady();
 
 function setReady() {
+	a=0;
 	count = 0;
 	i = 0;
 	h = 0;
@@ -124,7 +125,6 @@ function anser(num) {
 		document.getElementById('anser').style.backgroundColor = '#ff7f50';
 	w =  "<div class='a-anser'><div class='q'>"+al[0][randA]+"</div><div class='anser'>"+t+"</div></div>" + w;
 	document.getElementById("text_a").innerHTML = w;
-		mis_one.unshift(Number(randA));
 		document.getElementById("text_a").innerHTML = w;
 	}
 }
@@ -138,19 +138,32 @@ function check(){
 	document.getElementById("text_a").className="hidden";	
 	Countup();
 }
-function Countup(){
-		a = Math.floor(Math.random() * p);
+function Countup(){	
+
 		b = ar[a];
 		c = arr[a];
 	document.getElementById("text_k").innerHTML = b;
 	document.getElementById("text_g").innerHTML ="";
+	a++;
 }
 function show(){
 	document.getElementById("text_g").innerHTML = c;
 }
 function maru(){
-	document.getElementById("text_g").innerHTML = c;
-	window.setTimeout("Countup();", 0);
+	window.setTimeout("Countup();", 10);
+	if(p <= a){
+	document.getElementById("check").className="check";
+	document.getElementById("text_a").className="";	
+
+}
+
+}
+function batsu(){	
+	p++;
+	ar.push(b);
+	arr.push(c);
+	window.setTimeout("Countup();", 10);
+
 }
 
 
