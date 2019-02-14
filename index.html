@@ -2,59 +2,91 @@
 <head>
 <meta charset="utf-8"> 
  <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home</title>
-<link href="surface_styles.css" rel="stylesheet">
-<link rel="apple-touch-icon" href="images/home-icon.jpg">
+<title>Home HasekoIkuta</title>
+<link href="css/slick.css" rel="stylesheet">
+<link rel="apple-touch-icon" href="home-icon.jpg">
 </head>
 <style>
 body{
     font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Segoe UI","Noto Sans Japanese","ヒラギノ角ゴ ProN W3", Meiryo, sans-serif;
 }
+    html, body {
+      margin: 0;
+      padding: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+      color: black;
+    }
+
+
+    .slick-slide {
+      transition: all ease-in-out .3s;
+      opacity: .2;
+    }
+    
+    .slick-active {
+      opacity: .5;
+    }
+
+    .slick-current {
+      opacity: 1;
+    }
+
 </style>
 <body>
-	<input type="checkbox" id="nav--super-vertical-responsive">
-	<label for="nav--super-vertical-responsive">MENU</label>
-	<aside class="nav--super-vertical g--2 g-m--3 g-s--6 g-t--12 no-margin-vertical" role="sidebar">
-		<div class="g--12 logo-area no-margin-vertical">
-			<h4 class="color--pink no-margin-vertical">Surface</h5>
-		</div>
-		<nav class="g--12 no-margin-vertical" role="navigation">
-			<a href="index.html">Home</a>
-			<div class="nav-collapsible">
-				<input type="checkbox" id="nav-collapsible-1">
-				<label for="nav-collapsible-1">Components</label>
-				<div class="nav-collapsible-links">
-					<a href="docs/alerts.html">Alerts</a>
-					<a href="docs/animations.html">Animations</a>
-					<a href="docs/buttons.html">Buttons</a>
-					<a href="docs/cards-tiles.html">Cards &amp; Tiles</a>
-					<a href="docs/collapsibles.html">Collapsibles</a>
-					<a href="docs/colors.html">Colors</a>
-					<a href="docs/footer.html">Footer</a>
-					<a href="docs/forms.html">Forms</a>
-					<a href="docs/grid.html">Grid</a>
-					<a href="docs/header.html">Header</a>
-					<a href="docs/lightbox.html">Lightbox</a>
-					<a href="docs/links.html">Links</a>
-					<a href="docs/media.html">Media</a>
-					<a href="docs/modals.html">Modals</a>
-					<a href="docs/navigation.html">Navigation</a>
-					<a href="docs/tables.html">Tables</a>
-					<a href="docs/tabs.html">Tabs</a>
-					<a href="docs/tooltips.html">Tooltips</a>
-					<a href="docs/typography.html">Typography</a>
-					<a href="docs/utility.html">Utility</a>
-				</div>
-			</div>
-		</nav>
-	</aside>
+
+  <section class="variable slider">
+    <div>
+      <a href="kiku-juku/quiz.3.0.html">
+        <div class="title-card">
+          <div>
+            <h2>キクジュク3択</h2>
+            <h3>ALC-KIKUJUKU3600 3択クイズ</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div>
+      <a href="kiku-rev/quiz.3.0.html">
+        <div class="title-card">
+          <div>
+            <h2>キクジュク3択</h2>
+            <h3>[REV]ALC-KIKUJUKU3600 3択クイズ</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div>
+      <a href="kobun/quiz.3.0.html">
+        <div class="title-card">
+          <div>
+            <h2>古文単語3択</h2>
+            <h3>古文単語3択問題。VER.3.2</h3>
+          </div>
+        </div>
+      </a>
+    </div>
+  </section>
 	<main class="g--10 g-m--12 m--2 m-m--0 no-margin-vertical" role="main">
-		<header class="container--wrap">
-			<h1 class="m--1 g--4 g-s--12 docsHeader">Home</h1>
-		</header>
 
 
-  <div class="card g--5 g-s--12">
+
+  <div class="slide-bottom">
     <h2>キクジュク</h2>
     <div class="tile"><a href="kiku-juku/quiz.3.0.html">キクジュク3択</a></div>
     <div class="tile"><a href="kiku-juku/quiz.4.0.html">キクジュク</a></div>
@@ -62,12 +94,12 @@ body{
     <div class="tile"><a href="kiku-juku/maru.html">一問一答</a></div>
     <div class="tile"><a href="kiku-juku/iritan.html">いちらん</a></div>
   </div>
-  <div class="card g--5 g-s--12">
+  <div class="slide-bottom">
     <h2>世界史　年代</h2>
     <div class="tile"><a href="sekai-shi/quiz.3.0.html">三択</a></div>
     <div class="tile"><a href="sekai-shi/iritan.html">一覧</a></div>
   </div>
-  <div class="card g--5 g-s--12">
+  <div class="slide-bottom">
     <h2>キクジュク リバース</h2>
     <div class="tile"><a href="kiku-rev/quiz.3.0.html">キクジュク3択</a></div>
     <div class="tile"><a href="kiku-rev/quiz.4.0.html">キクジュク</a></div>
@@ -77,19 +109,85 @@ body{
   </div>
 
 
-  <div class="card g--5 g-s--12">
+  <div class="slide-bottom">
     <h2>古典</h2>
     <div class="tile"><a href="kobun/quiz.3.0.html">古文単語３３０テスト</a></div>
     <div class="tile"><a href="kobun/list.html">古文単語ランダム</a></div>
     <div class="tile"><a href="kobun/maru.html">Test</a></div>
     <div class="tile"><a href="kobun/iritan.html">いちらん</a></div>
   </div>
-  <div class="card">
+  <div class="slide-bottom">
     <h2>現代文</h2>
     <div class="tile"><a href="genbun/list.html">現代文単語ランダム（自動）</a></div>
     <div class="tile"><a href="genbun/listB.html">現代文単語ランダム（手動）</a></div>
     <div class="tile"><a href="genbun/test.html">現代文単語クイズ</a></div>
   </div>
-
-
 </main>
+
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+  <script src="js/jquery.fadethis.min.js" type="text/javascript" charset="utf-8"></script>
+  <script src="js/slick.min.js" type="text/javascript" charset="utf-8"></script>
+  <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".vertical-center-4").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      });
+      $(".vertical-center-3").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".vertical-center-2").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+        slidesToShow: 2,
+        slidesToScroll: 2
+      });
+      $(".vertical-center").slick({
+        dots: true,
+        vertical: true,
+        centerMode: true,
+      });
+      $(".vertical").slick({
+        dots: true,
+        vertical: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 5,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+      $(".lazy").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+      });
+    });
+    
+</script>
+<script>
+$(window).fadeThis();
+</script>
+
+
