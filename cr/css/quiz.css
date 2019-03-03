@@ -7,7 +7,7 @@ body {
 }
 #text_s a{
   display: block;
-  width:20vw;
+  width:16vw;
   height:10vw;
   float:left;
   background-color: #26a69b;/*背景色*/
