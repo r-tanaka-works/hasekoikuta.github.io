@@ -467,15 +467,21 @@ body{
 }
 .micro-alge1{
 	top:90px;
-	left:75%;
+	left:75vw;
+	width:25vw;
+	height:25vw;
 }
 .micro-alge3{
-	top:620px;
-	right:0;
+	top:400px;
+	left:-10vw;
+	width:20vw;
+	height:20vw;
 }
 .micro-alge2{
-	top:400px;
-	right:0;
+	top:600px;
+	left:70vw;
+	width:25vw;
+	height:25vw;
 }
 #sec5 .text{
 	margin:40px 25px;
