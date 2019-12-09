@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<head>
+<meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ALC-キクジュク3600</title>
+<link rel="apple-touch-icon" href="kiku-juku-icon.jpg">
+<link rel="stylesheet" href="css/quiz.4.0.css">
+</head>
+<body>
+<div class="container">
+  <div id="section_1">
+    <a id="section_1" href="javascript:next()" class="button header"></a>
+    <div id="text_k">古文単語</div>
+    <div id="text_g"></div>
+    <div class="pan show">
+     <a href="javascript:show()" class="button">答　え</a>
+    </div>
+    <div class="pan countup">
+     <a href="javascript:maru()" class="button">わかった</a>
+    </div>
+    <div class="pan noidea">
+     <a href="javascript:batsu()" class="button">わからない</a>
+    </div>
+  </div>
+  <div id="section_2" class="close">
+    <a id="section_2" href="javascript:back()" class="button header"></a>
+    <div id="sec2_question">古文単語</div>
+    <div id="sec2_answer"></div>
+
+  </div>
+</div>
+<script type="text/javascript" src="js/cookie.js"></script>
+<script>
+var num = getCookie('COUNT');
+if(!num){
+ num = 0;
+}
+num--;
+</script>
+<script type="text/javascript" src="js/list.js"></script>
+<script type="text/javascript" src="js/quiz.4.0.js"></script>
+</body>
+</html>
