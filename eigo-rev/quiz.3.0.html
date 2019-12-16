@@ -14,6 +14,15 @@
 				<span id="level">0/20</span>
 			</b>
 				総解答数<span id="number"></span>問
+				<a href="javascript:check()"><span class="check"></span></a>
+				<div id="check">
+<div id="text_k">古文単語</div>
+<div id="text_g"></div>
+<div id="container"></div>
+<div class="pan show"><a href="javascript:show()" class="button">a</a>答　え</div>
+<div class="pan countup"><a href="javascript:maru()" class="button">a</a>わかった</div>
+<div class="pan noidea"><a href="javascript:batsu()" class="button">a</a>わからない</div>
+</div>
 
 		</div>
 	</a>
@@ -25,6 +34,9 @@
 	<form name="fm">
 		<input type="range" min="1" max="20" name="A" value="10">
 	</form>
+  <form name="fn">
+    <input type="tel" class="tel" name="B" value="390">
+  </form>
 <script type="text/javascript" src="js/cookie.js"></script>
 <script>
 var num = getCookie('COUNT');
