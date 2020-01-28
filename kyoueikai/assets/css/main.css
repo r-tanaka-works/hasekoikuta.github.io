@@ -1253,7 +1253,7 @@
 				-ms-transition-delay: 0.25s;
 				transition-delay: 0.25s;
 				padding: 3rem 2rem;
-				max-height: 42rem;
+				max-height: 40rem;
 				overflow: hidden;
 			}
 
@@ -1477,8 +1477,7 @@
 			transition: opacity 0.325s ease-in-out, transform 0.325s ease-in-out;
 			padding: 4.5rem 2.5rem 1.5rem 2.5rem ;
 			position: relative;
-			width: 40rem;
-			max-width: 100%;
+			width: 100vw;
 			background-color: rgba(27, 31, 34, 0.85);
 			border-radius: 4px;
 			opacity: 0;
