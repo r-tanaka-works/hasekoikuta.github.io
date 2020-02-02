@@ -1,14 +1,6 @@
 @import url(font-awesome.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300italic,600italic,300,600");
 
-/*
-	Dimension by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
-
-/* Reset */
-
 	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
 		margin: 0;
 		padding: 0;
@@ -48,15 +40,11 @@
 		-webkit-text-size-adjust: none;
 	}
 
-/* Box Model */
-
 	*, *:before, *:after {
 		-moz-box-sizing: border-box;
 		-webkit-box-sizing: border-box;
 		box-sizing: border-box;
 	}
-
-/* Basic */
 
 	@-ms-viewport {
 		width: device-width;
@@ -88,8 +76,6 @@
 			-ms-transition-delay: none !important;
 			transition-delay: none !important;
 		}
-
-/* Type */
 
 	html {
 		font-size: 16pt;
@@ -278,8 +264,6 @@
 	.align-right {
 		text-align: right;
 	}
-
-/* Form */
 
 	form {
 		margin: 0 0 2.5rem 0;
@@ -551,8 +535,6 @@
 		opacity: 1.0;
 	}
 
-/* Box */
-
 	.box {
 		border-radius: 4px;
 		border: solid 1px #ffffff;
@@ -572,8 +554,6 @@
 			padding: 0;
 		}
 
-/* Icon */
-
 	.icon {
 		text-decoration: none;
 		border-bottom: none;
@@ -592,8 +572,6 @@
 		.icon > .label {
 			display: none;
 		}
-
-/* Image */
 
 	.image {
 		border-radius: 4px;
@@ -680,8 +658,6 @@
 			}
 
 		}
-
-/* List */
 
 	ol {
 		list-style: decimal;
@@ -869,8 +845,6 @@
 			margin-left: 2rem;
 		}
 
-/* Table */
-
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
 		overflow-x: auto;
@@ -936,8 +910,6 @@
 			table.alt tfoot {
 				border-top: 0;
 			}
-
-/* Button */
 
 	input[type="submit"],
 	input[type="reset"],
@@ -1040,8 +1012,6 @@
 		line-height: calc(2.75rem - 2px);
 	}
 
-/* BG */
-
 	#bg {
 		-moz-transform: scale(1.0);
 		-webkit-transform: scale(1.0);
@@ -1113,8 +1083,6 @@
 			background-color: #000000;
 		}
 
-/* Wrapper */
-
 	#wrapper {
 		display: -moz-flex;
 		display: -webkit-flex;
@@ -1167,8 +1135,6 @@
 			}
 
 		}
-
-/* Header */
 
 	#header {
 		display: -moz-flex;
