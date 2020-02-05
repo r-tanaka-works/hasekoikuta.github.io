@@ -14,7 +14,7 @@ a{
 	top:5px;
 	display:block;
 	margin:10px;
-	margin-left:calc(100vw - 180px);
+	margin-left:calc(100vw - 150px);
 }
 .logo{
 	display:inline-block;
@@ -83,24 +83,24 @@ text-decoration: none;
 	bottom: 21px;
 	left:16px;
 	display:inline-block;
-	width:120px;
-	height:100px;
+	width:80px;
+	height:112px;
 	border-radius:5px;
-    padding-top: 20px;
+    padding-top: 15px;
     font-size:25px;
   color: #ffffff;
 background: rgb(23,46,172);
 background-image: linear-gradient(45deg, #FFC107 0%, #ff8b5f 100%);
-  line-height:40px;
+  line-height:50px;
 
 }
 .sign-up{
 	position:absolute;
 	bottom: 90px;
-	left:152px;
+	left:107px;
 	display:inline-block;
 	height:56px;
-	width:calc(100vw - 188px);
+	width:calc(100vw - 130px);
 	max-width:560px;
 	border-radius:28px;
 	border:1px solid rgb(73,96,222);
@@ -126,15 +126,15 @@ font-size:17px;
 .header-button .schedule{
 	position:absolute;
 	bottom: 21px;
-	left:152px;
-	width:calc(100vw - 188px);
+	left:107px;
+	width:calc(100vw - 130px);
 	max-width:560px;
 }
 
 
 #main{
 	position:absolute;
-	top:100vh;
+	top:calc(100vh - 30px);
 }
 .sign-up .fa-user-plus{
 font-size:0;
@@ -142,7 +142,15 @@ font-size:0;
 .header-button .schedule .fa-calendar-alt{
 font-size:0;
 }
-@media screen and (max-width: 400px){
+@media screen and (max-width: 360px){
+.sign-up, .schedule{
+	font-size:14px;
+}
+
+
+
+}
+@media screen and (max-width: 320px){
 .sign-up{
 	font-size:0;
 	border-radius:50%;
@@ -150,7 +158,7 @@ font-size:0;
 	width:76px;
 	padding-top:15px;
 	bottom:40px;
-	left:calc(80px + 20vw);
+	left:calc(50px + 20vw);
 }
 .header-button .schedule{
 	font-size:0;
@@ -158,7 +166,7 @@ font-size:0;
 	height:61px;
 	width:76px;
 	padding-top:15px;
-	left:calc(80px + 45vw);
+	left:calc(60px + 45vw);
 	bottom:40px;
 }
 .fa-user-plus{
@@ -177,22 +185,22 @@ font-size:42px !important;
 	margin:0;
 }
 .header-icon{
-	margin-left:calc(100vw - 130px);
+	margin-left:calc(100vw - 100px);
 }
 }
-@media screen and (max-width: 313px){
+@media screen and (max-width: 300px){
 .fa-line{
 	font-size:0;
 	margin:0;
 }
 .header-icon{
-	margin-left:calc(100vw - 80px);
+	margin-left:calc(100vw - 50px);
 }
 .header-button .schedule,.fa-calendar-alt{
 display:none !important;
 }
 .sign-up{
-	left:calc(50px + 40vw);
+	left:calc(40vw + 10px);
 }
 }
 
