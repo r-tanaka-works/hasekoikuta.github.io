@@ -165,6 +165,7 @@ i {
 
 #main p{
 	line-height:1.5em;
+	font-size:1.2em;
 }
 
 
@@ -266,7 +267,7 @@ i {
 }
 
 .stp, .stp-title{
-	font-size:1.4em;
+	font-size:1.4em !imporatnt;
 }
 .stp {
 	display: inline-block;
