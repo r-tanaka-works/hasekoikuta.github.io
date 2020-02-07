@@ -10,7 +10,7 @@ body {
 	font-size:10px;
 }
 h3{
-	font-size:1.7em;
+	font-size:2.2em;
 }
 header {
 	position: relative;
@@ -18,15 +18,16 @@ header {
 
 .logo {
 	display: inline-block;
-	width: 100vw;
-	padding: 10px 0;
-	border-bottom: solid 2px #aaa;
+	width:100vw;
+	padding:10px 0;
+	border-bottom: solid 1px #d7d7e1;
 }
 
 .logo img {
 	display: inline-block;
 	height: 36px;
 	width: auto;
+	padding-left:20px;
 }
 
 a {
@@ -42,7 +43,7 @@ i {
 	top:0;
 	display: block;
 	margin: 10px;
-	margin-left: calc(100vw - 135px);
+	margin-left: calc(100vw - 138px);
 }
 
 .fa-twitter-square, .fa-envelope-square, .fa-line{
@@ -55,7 +56,7 @@ i {
 }
 
 .fa-envelope-square {
-	color: #666;
+	color: #323246;
 	margin-left: 7px;
 }
 
@@ -67,7 +68,7 @@ i {
 .header-photo {
 	position: relative;
 	width:100vw;
-	height: 300px;
+	height: 250px;
 	background-color: #aaa;
 	background: -moz-linear-gradient(top, #7db9e8 12%, #7db9e8 12%, #1e5799 72%);
 	background: -webkit-linear-gradient(top, #7db9e8 12%, #7db9e8 12%, #1e5799 72%);
@@ -96,7 +97,7 @@ i {
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 90%;
+    width: 96%;
     margin: 20px auto 0;
     box-sizing: border-box;
     padding: 0 3%;
@@ -105,8 +106,8 @@ i {
     float: left;
 }
 .account-group__btn {
-    margin-right: 3%;	
-    width: 47%;
+    margin:0 1%;	
+    width: 46%;
     margin-bottom: 15px;
 }
 .btn{
@@ -124,22 +125,20 @@ i {
     height: 69px;
 }
 .account_btn{
-    background-color: #0a6fd7;
-    border: 2px solid #255cc3;
-    background: -moz-linear-gradient(top, #0a6fd7, #0a6cd1);
-    background: -webkit-linear-gradient(top, #0a6fd7, #0a6cd1);
-    background: linear-gradient(to bottom, #0a6fd7, #0a6cd1);
+    background-color: #0854a2;
+    border: 2px solid #0a275d;
+    background: -moz-linear-gradient(top, #0854a2, #084e96);
+    background: -webkit-linear-gradient(top, #0854a2, #084e96);
+    background: linear-gradient(to bottom, #0854a2, #084e96);
 }
 .login_btn {
-    background-color: #dab656;
-    border: 2px solid #c8a33f;
-    background: -moz-linear-gradient(top, #dab656, #d4b154);
-    background: -webkit-linear-gradient(top, #dab656, #d4b154);
-    background: linear-gradient(to bottom, #dab656, #d4b154);
+    background-color: #ffffff;
+    border: 1px solid #0a275d;
+    color:#0a275d;
 }
 .visitor{
     display: block;
-    width: 100%;
+    width: 94%;
     margin: 0 auto
 }
 .visitor .btn {
@@ -165,9 +164,10 @@ i {
 
 #main p{
 	line-height:1.5em;
-	font-size:1.2em;
 }
-
+.intro{
+	font-size:1.4em;
+}
 
 
 @media screen and (max-width: 360px) {
@@ -201,18 +201,26 @@ i {
 	padding: 0.25em 0;
 }
 
-.major:after {
+.bg2 .major:after {
 	content: "";
 	display: block;
 	height: 4px;
 	background: -webkit-linear-gradient(to right, rgb(23, 46, 172), transparent);
 	background: linear-gradient(to right, rgb(23, 46, 172), transparent);
 }
+.bg .major:after{
+	content: "";
+	display: block;
+	height: 2px;
+	background: -webkit-linear-gradient(to right, rgb(105, 140, 255), transparent);
+	background: linear-gradient(to right, rgb(105, 140, 255), transparent);
+}
 
 .bg {
-	padding: 30px;
+	padding:10px 30px 30px 30px;
 	background: #004296;
 	color: #fff;
+	font-size:1.0em;
 }
 
 .bg ul { 
@@ -223,22 +231,19 @@ i {
 	position: relative;
 	list-style-type: none;
 	border-bottom: solid 1px #698CFF;
-	font-size: 14px;
-	padding: 30px 0;
+	font-size: 1.4em;
+	padding: 20px 0;
 }
 
 .bg li p {
 	vertical-align: middle;
 	padding-left: 30vw;
-	height: 62px;
 	margin: 0;
-	font-size:1.0em !important;
 }
 
 .list-icon {
 	position: absolute;
 	display: block;
-	width: 70px;
 	text-align: center;
 	left: 7vw;
 }
@@ -246,15 +251,34 @@ i {
 .bg li i {
 	top: 0px;
 	color: #fff;
-	font-size: 40px;
+}
+.li-1{
+	font-size:2.7em;
+	left:0.85em;
+}
+.li-2{
+	font-size:3.2em;
+	left:1.05em;
+}
+.li-3{
+	font-size:2.7em;
+	left:0.8em;
+}
+.li-4{
+	font-size:2.7em;
+	left:1.1em;
+}
+.li-5{
+	font-size:2.6em;
+	left:1.03em;
+
+}
+.li-6{
+	font-size:3.2em;
+	left:0.8em;
 }
 
-.list-icon .fa-male{
-	font-size: 60px;
-}
-.list-icon .fa-user-tie {
-	font-size: 50px;
-}
+
 
 .steps {
 	position: relative;
@@ -275,97 +299,93 @@ i {
 	background: linear-gradient(45deg, rgba(23, 46, 172, 1) 0%, rgba(9, 9, 121, 1) 100%);
 	color: white;
 	font-weight: bold;
-	font-size: 20px;
+	font-size: 1.7em;
 	border-radius: 50%;
 	width: 25px;
 	height: 25px;
-	margin: 40px 0;
+	margin: 20px 0;
 }
 
 .stp-title {
 	display: inline-block;
-	font-size: 20px;
+	font-size: 2.0em;
 	font-weight: 700;
-	margin: 40px 0;
+	margin: 10px 0;
 }
 
 .stp-icons {
 	position: relative;
-	width: 40vw;
-	margin: auto;
+	width:2.5em;
+	height:1.3em;
+	margin:10px auto;
+	font-size:8em;
+
 }
 
-.stp-icons i {
-	font-size: 70px;
+.stp1-1 {
+	position:absolute;
+	font-size:0.85em ;
+	left:0.5em;;
 }
 
-.stp-icons .fa-calendar-alt {
+.stp1-2 {
 	position: absolute;
-	font-size: 60px;
-	left: 10vw;
-}
-
-.stp-icons .stp1-2 {
-	position: absolute;
-	font-size: 80px;
-	padding-top: 20px;
-	left: 20vw;
+	font-size:1em;
 }
 
 .stp2-1 {
 	position: absolute;
 	left: 0;
-	z-index: 100;
 }
 
 .stp2-2 {
 	position: absolute;
-	font-size: 10vw !important;
-	left: 15vw;
-	top: calc(15px - 2vw);
+	font-size: 0.7em;
+	left:1.25em;
+	top:0;
 }
 
 .stp2-3 {
 	position: absolute;
 	right: 0;
-	z-index: 100;
 }
 
 .stp2-4 {
 	position: absolute;
-	left: 15vw;
-	top: calc(70px - 3vw);
-	font-size: 13vw !important;
+	left:2.05em;
+	top:1.2em;
+	font-size:0.5em;
 }
 
 .stp3-1 {
 	position: absolute;
 	left: 0;
-	z-index: 100;
+	font-size:0.85em;
+	top:0.2em;
 }
 
 .stp3-2 {
 	position: absolute;
-	font-size: 10vw !important;
-	left: 15vw;
-	top: calc(15px - 2vw);
+	font-size: 0.7em;
+	left:1.2em;
+	top:0;
 }
 
 .stp3-3 {
 	position: absolute;
 	right: 0;
-	z-index: 100;
 }
 
 .stp3-4 {
 	position: absolute;
-	left: 15vw;
-	top: calc(80px - 3vw);
-	font-size: 11vw !important;
+	left:1.9em;
+	top:1.3em;
+	font-size:0.5em;
 }
 
 .ex {
-	padding-top: 140px;
+	padding-top: 10px;
+	font-size:1.0em;
 }
 
 .alt {
@@ -380,14 +400,47 @@ i {
 }
 
 .bg2 {
-	padding: 30px;
+	margin: 30px;
 }
 
 
-.alfa {
-	margin-top: 20px !important;
+table{
+  width: 100%;
 }
 
+table th{
+  position: relative;
+vertical-align:top;
+  text-align: left;
+  font-size:1.2em;
+  width: 40%;
+}
+
+.line:after{
+  display: block;
+  content: "";
+  width: 3em;
+  height: 1.3px;
+  background-color: #ffffff;
+  position: absolute;
+  top:calc(50% - 1px);
+
+  right:2em;
+}
+
+table td{
+
+  text-align: left;
+  width: 85%;
+  font-size:1.2em;
+}
+table a{
+	color:#fff;
+	text-decoration:underline;
+}
+.copyright{
+	text-align:center;
+}
 @media (max-height: 628px) {
 	.header-photo {
 		height: calc(100vh - 229px);
@@ -399,11 +452,7 @@ i {
 		width: 750px;
 		margin: 0 calc(50vw - 375px);
 	}
-	.stp2-2, .stp2-4, .stp3-2, .stp3-4 {
-		font-size: 70px !important;
-		left: calc(20vw - 35px);
-	}
-	.stp2-4, .stp3-4 {
-		top: 50px;
+	.account-group{
+	    width: 790px;
 	}
 }
