@@ -1,0 +1,116 @@
+body{
+	padding:0;
+	margin:0;
+	text-align:center;
+     font-family: Helvetica , "ü‡ÉSÉVÉbÉN" , "Yu Gothic" , sans-serif;
+}
+article{
+	position:relative;
+	margin:7vw 2vw;
+	padding:0;
+}
+#a-level{
+	height:17vw;
+}
+#level{
+	display:inline-block;
+	position:absolute;
+	left:19vw;
+	top:0;
+	width:15vw;
+	height:8.5vw;
+	background:#ff8d00;
+	color:white;
+	padding-top:1.3vw;
+	font-size:6vw;
+	font-weight:700;
+	border-radius:2vw;
+}
+#exp{
+	display:inline-block;
+	position:absolute;
+	left:27vw;
+	top:2vw;
+	width:50vw;
+	height:6vw;
+	background:black;
+	color:white;
+	font-size:5vw;
+	font-weight:700;
+	border-radius:2vw;
+	z-index:-1;
+}
+#a-timer{
+	height:50vw;
+}
+.btn{
+	display:inline-block;
+	width:20vw;
+	height:13vw;
+	padding-top:7vw;
+	margin:0 12vw;
+	font-size:4vw;
+	border-radius:12vw;
+	background:#105935;
+	border:1vw solid white;
+	box-shadow:0 0 0 1vw #105935;
+}
+#timer{
+	font-size:12vw;
+	margin:5vw 0;
+}
+#f-stop{
+	display:none;
+}
+#f-start{
+	display:none;
+}
+#cards{
+	background:#fafafa;
+	margin:0;
+	padding:3vw 3vw;
+	height:60vw;
+	overflow:scroll;
+	box-shadow:0px 2px 4px 1px #eee inset;
+}
+.card{
+	position:relative;
+	width:90vw;
+	height:16vw;
+	margin:4vw 0;
+	padding:2vw 1vw;
+	background:white;
+	border-radius:2vw;
+	font-size:4vw;
+	box-shadow:1px 1px 2px 0 #eee;
+}
+.c-title{
+	width:75vw;
+	text-align:left;
+	padding:0.5vw 0 0 2vw;
+}
+.c-button{
+	text-decoration:none;
+	display:block;
+	position:absolute;
+	top:2vw;
+	left:70vw;
+	width:20vw;
+	height:11vw;
+	padding-top:5vw;
+	background:#ddd;
+	border-radius:2vw;
+}
+.btn:active{
+	transition-duration: 0.05s;
+transition-timing-function: linear;
+	box-shadow:0 0 0 1.4vw #105935;
+	border:1.2vw solid white;
+	transform:scale(0.95);
+}
+.c-button:active{
+	transition-duration: 0.05s;
+transition-timing-function: linear;
+	transform:scale(1.05);
+
+}
